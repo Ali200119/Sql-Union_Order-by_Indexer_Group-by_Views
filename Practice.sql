@@ -47,7 +47,7 @@ SELECT * FROM Customers
 
 
 
--- Except
+-- Except & Intesect
 
 SELECT * FROM Employees
 EXCEPT
@@ -57,3 +57,22 @@ SELECT * FROM Customers
 SELECT * FROM Employees
 INTERSECT
 SELECT * FROM Customers
+
+
+
+-- Order by
+
+SELECT * FROM Customers ORDER BY Id ASC
+
+SELECT [Name], Surname, Age FROM Customers
+WHERE Age > 22
+ORDER BY Age DESC
+
+
+
+-- View
+
+CREATE VIEW [GetEmployeesByAge] AS
+SELECT [Name], Surname, Age FROM Employees WHERE Age > 21
+
+SELECT * FROM GetEmployeesByAge
