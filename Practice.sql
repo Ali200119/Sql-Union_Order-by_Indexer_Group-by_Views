@@ -32,8 +32,9 @@ INSERT INTO Employees VALUES
 ('Elcan', 'Qurbanov', 20),
 ('Mubariz', 'Agayev', 18)
 
-DROP TABLE Employees
-DROP TABLE Customers
+
+
+-- Union
 
 SELECT * FROM Employees
 UNION
@@ -42,4 +43,17 @@ SELECT * FROM Customers
 
 SELECT * FROM Employees
 UNION ALL
+SELECT * FROM Customers
+
+
+
+-- Except
+
+SELECT * FROM Employees
+EXCEPT
+SELECT * FROM Customers
+
+
+SELECT * FROM Employees
+INTERSECT
 SELECT * FROM Customers
