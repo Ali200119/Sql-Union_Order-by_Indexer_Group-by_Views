@@ -95,3 +95,43 @@ GROUP BY Age
 -- HAVING COUNT(*) > 1
 HAVING COUNT(*) > 0
 ORDER BY COUNT(*) DESC
+
+SELECT COUNT(*) AS 'Age count', Age FROM Customers
+WHERE Age > 20
+GROUP BY Age
+-- HAVING COUNT(*) > 1
+HAVING COUNT(*) > 0
+ORDER BY Age DESC
+
+
+
+-- If & Else
+
+BEGIN
+    
+    DECLARE @age INT = (SELECT SUM(Age) FROM Employees)
+    DECLARE @avgAge INT = (SELECT AVG(Age) FROM Employees)
+
+    IF @age > @avgAge
+        PRINT 'Yes'
+    
+    ELSE
+        PRINT 'No'
+
+END
+
+
+
+-- While
+
+DECLARE @counter INT
+SET @counter = 1
+WHILE (@counter <= 10)
+
+BEGIN
+
+    PRINT 'Something'
+
+    SET @counter = @counter + 1
+
+END
